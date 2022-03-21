@@ -1,0 +1,72 @@
+*** NullCon Demo Files ***
+
+*** Null Demo 1 ***
+
+# Create and get inside nulldemo directory
+mkdir nulldemo
+cd nulldemo 
+
+# Check Terraform Version
+terraform --version
+
+# Check if tfsec is installed
+tfsec --help
+
+# Run tfsec in nulldemo/terraform/aws - its simple
+tfsec ./aws
+
+# Getting a CSV output from tfsec
+tfsec ./aws  --format csv -O nulldemotfsec.csv 
+
+# Creating a tfsec-config.yml file, if you're in AWS no need for GCP & Azure checks
+---
+severity_overrides:
+  aws-s3-enable-versioning: HIGH
+
+exclude: 
+  - google-sql-pg-log-checkpoints
+  - google-sql-pg-log-disconnections
+  - google-sql-pg-log-lock-waits
+  - google-storage-enable-ubla
+  - google-storage-no-public-access
+  - google-gke-no-public-control-plane
+  - google-gke-metadata-endpoints-disabled
+  - azure-database-no-public-access
+  - azure-database-secure-tls-policy
+  - azure-database-threat-alert-email-to-owner
+
+# Running with config file
+tfsec ./aws  --config-file ../tfsec.yml
+
+Use Case 1: Utilize tfsec.yml config file to massage the findings per your org's risk level
+Use Case 2: Exclude unnecessary findings from the testing to improve the test timings
+
+
+
+*** Null Demo 2 ***
+
+# Check if checkov is installed
+checkov --help
+
+# Initialise Terraform in aws dir.
+terraform init
+
+# Create a plan file
+terraform plan -out="./tf.plan"
+
+# Extras to read binary plan doc in JSON
+terraform show -json tf.plan >> plan.json
+
+# scanning aws templates with checkov
+checkov -d aws/
+
+# scanning aws while getting only failed test cases
+checkov --quiet -d aws/
+
+# scanning with failed test cases for plan only
+checkov --quiet -f aws/tf.plan
+
+# saving the results into JSON format
+checkov --quiet -o json -d . --output-file-path ../../ 
+
+
