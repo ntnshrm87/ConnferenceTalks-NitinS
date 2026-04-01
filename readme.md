@@ -11,6 +11,8 @@ A collection of conference and webinar presentations by **Nitin Sharma** on clou
 - [NullCon Webinar - March 2022](#nullcon-webinar---march-2022)
 - [AWS Community Day Rajasthan - November 2023](#aws-community-day-rajasthan---november-2023)
 - [GDG DevFest Gurugram - December 2023](#gdg-devfest-gurugram---december-2023)
+- [Git Together Hyderabad - September 2025](#git-together-hyderabad---september-2025)
+- [THM Hyderabad Chapter - September 2025](#thm-hyderabad-chapter---september-2025)
 - [PyConf Hyderabad - March 2026](#pyconf-hyderabad---march-2026)
 - [CloudNative Hyderabad - March 2026](#cloudnative-hyderabad---march-2026)
 
@@ -63,6 +65,26 @@ Cloud IAM is a crucial aspect for managing access to various cloud account resou
 **Date:** December 3, 2023 | [Event Page](https://gdg.community.dev/events/details/google-gdg-gurugram-presents-devfest-2023/) | [Slides (PDF)](https://github.com/ntnshrm87/ConnferenceTalks-NitinS/blob/main/GDG%20DevFest%202023%20Gurugram/GKE%20Security.pdf)
 
 Google engineers first developed Kubernetes before launching open source in 2014. It is a descendant of Borg, the container orchestration platform that Google uses internally. Nowadays, small to medium-sized businesses significantly benefit from the Kubernetes ecosystem by employing it in the long run. But not every company is following the appropriate security posture for their K8s workloads. Kubernetes infrastructure has always been complex, and increasingly sophisticated types of attacks exploit this, becoming difficult to detect given the often massive scale of Kubernetes deployments. In this session, I am going to cover how to securely manage a GKE cluster for different workloads covering aspects related to RBAC, GKE Hardening Essentials, etc.
+
+---
+
+### Git Together Hyderabad - September 2025
+
+> **Building Effective AI Agents**
+
+**Date:** September 13, 2025 | [Event Page](https://www.meetup.com/gittogether-hyderabad/) | [Slides (PDF)](https://github.com/ntnshrm87/ConnferenceTalks-NitinS/blob/main/Git%20Together%20and%20THM%20Hyderabad%20Chapter%20Sept%202025/Python%20AI%20Agents%20Demo%20-%20Effective%20AI%20Agents.pdf)
+
+This session explores the 7 foundational building blocks for building effective AI agents based on Anthropic's framework -- Intelligence, Memory, Tooling, Validation, Control, Recovery, and Feedback. Through hands-on Python demos, each component is broken down with working code examples showcasing how to architect production-ready AI agents from the ground up.
+
+---
+
+### THM Hyderabad Chapter - September 2025
+
+> **AI Agents - A Security Mindset**
+
+**Date:** September 21, 2025 | [Event Page](https://luma.com/gptm2yne) | [LinkedIn](https://www.linkedin.com/posts/the-hackers-meetup_cybersecurity-infosec-ctf-activity-7372943837595561984-IBxM) | [Slides (PDF)](https://github.com/ntnshrm87/ConnferenceTalks-NitinS/blob/main/Git%20Together%20and%20THM%20Hyderabad%20Chapter%20Sept%202025/Python%20AI%20Agents%20Demo%20-%20Security%20Mindset.pdf)
+
+Building on the 7 building blocks of effective AI agents, this session applies a security-first lens to each component. Through a detailed security risk assessment, it identifies 23 distinct vulnerabilities (8 high-risk, 15 medium-risk) across the Intelligence, Memory, Tooling, Validation, Control, Recovery, and Feedback layers. The session covers practical secure implementation patterns for each building block to harden AI agents for production deployment.
 
 ---
 
