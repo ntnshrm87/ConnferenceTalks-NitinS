@@ -1,6 +1,6 @@
 # Conference Talks
 
-A collection of conference and webinar presentations by **Nitin Sharma** on cloud security, infrastructure security, and threat intelligence.
+A collection of conference and webinar presentations by **Nitin Sharma** on cloud security, infrastructure security, threat intelligence, and AI security.
 
 ---
 
@@ -11,6 +11,7 @@ A collection of conference and webinar presentations by **Nitin Sharma** on clou
 - [NullCon Webinar - March 2022](#nullcon-webinar---march-2022)
 - [AWS Community Day Rajasthan - November 2023](#aws-community-day-rajasthan---november-2023)
 - [GDG DevFest Gurugram - December 2023](#gdg-devfest-gurugram---december-2023)
+- [PyConf Hyderabad - March 2026](#pyconf-hyderabad---march-2026)
 
 ---
 
@@ -61,6 +62,16 @@ Cloud IAM is a crucial aspect for managing access to various cloud account resou
 **Date:** December 3, 2023 | [Event Page](https://gdg.community.dev/events/details/google-gdg-gurugram-presents-devfest-2023/) | [Slides (PDF)](https://github.com/ntnshrm87/ConnferenceTalks-NitinS/blob/main/GDG%20DevFest%202023%20Gurugram/GKE%20Security.pdf)
 
 Google engineers first developed Kubernetes before launching open source in 2014. It is a descendant of Borg, the container orchestration platform that Google uses internally. Nowadays, small to medium-sized businesses significantly benefit from the Kubernetes ecosystem by employing it in the long run. But not every company is following the appropriate security posture for their K8s workloads. Kubernetes infrastructure has always been complex, and increasingly sophisticated types of attacks exploit this, becoming difficult to detect given the often massive scale of Kubernetes deployments. In this session, I am going to cover how to securely manage a GKE cluster for different workloads covering aspects related to RBAC, GKE Hardening Essentials, etc.
+
+---
+
+### PyConf Hyderabad - March 2026
+
+> **How AI Agents Go Rogue (A Security First Python Walkthrough)**
+
+**Date:** March 15, 2026 | [Event Page](https://2026.pyconfhyd.org/) | [Slides (PDF)](https://github.com/ntnshrm87/ConnferenceTalks-NitinS/blob/main/PyConf%20Hyderabad%202026/SlidesPyConfHYD2026%20-%20Nitin.pdf)
+
+As we move from passive chatbots to autonomous AI agents, we grant LLMs the power to execute code, call APIs, and modify databases -- often with unchecked privileges and zero audit trails. This session provides a security-first walkthrough of how Python-based agents can be exploited through prompt injection and tool abuse. It covers the "Autonomy Paradox" -- why the same features that make agents powerful create a massive attack surface -- followed by a live multi-stage exploit demonstration and a deep dive into the 5 Layers of Agentic Threat across the Perception, Reasoning, Tool, Action, and Memory layers. The session concludes with practical hardening patterns using Pydantic and Guardrails to enforce strict schema validation and prevent tool argument hijacking.
 
 ---
 
