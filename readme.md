@@ -12,6 +12,7 @@ A collection of conference and webinar presentations by **Nitin Sharma** on clou
 - [AWS Community Day Rajasthan - November 2023](#aws-community-day-rajasthan---november-2023)
 - [GDG DevFest Gurugram - December 2023](#gdg-devfest-gurugram---december-2023)
 - [PyConf Hyderabad - March 2026](#pyconf-hyderabad---march-2026)
+- [CloudNative Hyderabad - March 2026](#cloudnative-hyderabad---march-2026)
 
 ---
 
@@ -71,7 +72,17 @@ Google engineers first developed Kubernetes before launching open source in 2014
 
 **Date:** March 15, 2026 | [Event Page](https://2026.pyconfhyd.org/) | [Slides (PDF)](https://github.com/ntnshrm87/ConnferenceTalks-NitinS/blob/main/PyConf%20Hyderabad%202026/SlidesPyConfHYD2026%20-%20Nitin.pdf)
 
-As we move from passive chatbots to autonomous AI agents, we grant LLMs the power to execute code, call APIs, and modify databases -- often with unchecked privileges and zero audit trails. This session provides a security-first walkthrough of how Python-based agents can be exploited through prompt injection and tool abuse. It covers the "Autonomy Paradox" -- why the same features that make agents powerful create a massive attack surface -- followed by a live multi-stage exploit demonstration and a deep dive into the 5 Layers of Agentic Threat across the Perception, Reasoning, Tool, Action, and Memory layers. The session concludes with practical hardening patterns using Pydantic and Guardrails to enforce strict schema validation and prevent tool argument hijacking.
+As we move from passive chatbots to autonomous AI agents, we grant LLMs the power to execute code, call APIs, and modify databases often with unchecked privileges and zero audit trails. This session provides a security-first walkthrough of how Python-based agents can be exploited through prompt injection and tool abuse. It covers the "Autonomy Paradox" as to why the same features that make agents powerful create a massive attack surface - followed by a live multi-stage exploit demonstration and a deep dive into the 5 Layers of Agentic Threat across the Perception, Reasoning, Tool, Action, and Memory layers. The session concludes with practical hardening patterns using Pydantic and Guardrails to enforce strict schema validation and prevent tool argument hijacking.
+
+---
+
+### CloudNative Hyderabad - March 2026
+
+> **Container Forensics**
+
+**Date:** March 28, 2026 | [Event Page](https://community.cncf.io/events/details/cncf-cloud-native-hyderabad-presents-march-meetup-cloud-native-hyderabad/) | [Slides (PDF)](https://github.com/ntnshrm87/ConnferenceTalks-NitinS/blob/main/CloudNative%20Hyderabad%202026/CNCF%20Meetup%20%28Mar%2028%29_%20Container%20Forensics.pdf)
+
+Containers have become the backbone of modern cloud-native deployments, but what happens when a container is compromised? This session dives into container forensics -- the techniques and tools needed to investigate and analyze security incidents within Docker and Kubernetes environments. It covers practical approaches using Falco for eBPF-based runtime monitoring, docker inspect and export for artifact collection, cri-tools for CRI-level forensics, and Sysdig for advanced system tracing. The session equips practitioners with a hands-on toolkit to detect, investigate, and respond to container-level threats.
 
 ---
 
