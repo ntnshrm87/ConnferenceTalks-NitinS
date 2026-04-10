@@ -1,0 +1,86 @@
+# ============================================================
+# Container Forensics Demo — Custom Falco Rules
+#
+# Tuned for the Juice Shop demo to produce clean, readable
+# alerts that map directly to the 3 differentiators.
+#
+# Deploy to: /etc/falco/falco_rules.local.yaml
+# ============================================================
+
+
+# ==========================================
+# Differentiator 1: eBPF-Powered Visibility
+# ==========================================
+
+- rule: Demo - Shell Spawned in Container
+  desc: Detects a shell (bash, sh, ash, etc.) spawned inside a container via kernel execve.
+  condition: >
+    evt.type = execve and 
+    container.id != host and 
+    proc.name in (bash, sh, ash, dash, csh, zsh)
+  output: >
+    ALERT [eBPF] Shell spawned in container
+    (container=%container.name image=%container.image.repository shell=%proc.name parent=%proc.pname cmdline=%proc.cmdline user=%user.name pid=%proc.pid)
+  priority: WARNING
+  tags: [container, shell, demo]
+
+# ==========================================
+# Differentiator 2: Behavioral Anomaly
+# ==========================================
+
+- rule: Demo - Web Server Spawned Shell (Anomaly)
+  desc: Detects a web app (node, java, python, etc.) spawning a shell—a classic RCE indicator.
+  condition: >
+    evt.type = execve and 
+    container.id != host and 
+    proc.name in (bash, sh, ash, dash) and 
+    proc.pname in (node, java, python, python3, nginx, apache2, httpd, ruby, php)
+  output: >
+    ALERT [ANOMALY] Web server spawned shell — abnormal process pattern
+    (container=%container.name web_process=%proc.pname shell=%proc.name cmdline=%proc.cmdline user=%user.name)
+  priority: CRITICAL
+  tags: [container, anomaly, demo]
+
+- rule: Demo - Sensitive File Read in Container
+  desc: Detects access to sensitive files like /etc/shadow or process environments.
+  condition: >
+    evt.type = openat and 
+    container.id != host and 
+    (fd.name startswith /etc/shadow or fd.name startswith /proc/1/environ)
+  output: >
+    ALERT [ANOMALY] Sensitive file read in container
+    (container=%container.name file=%fd.name process=%proc.name parent=%proc.pname user=%user.name)
+  priority: WARNING
+  tags: [container, anomaly, demo]
+
+- rule: Demo - File Written to /tmp in Container
+  desc: Detects files written to /tmp, often used by attackers to drop payloads or miners.
+  condition: >
+    evt.type = openat and 
+    evt.is_open_write=true and 
+    container.id != host and 
+    fd.name startswith /tmp/ and 
+    not fd.name contains .sock and 
+    not proc.name in (node, npm)
+  output: >
+    ALERT [ANOMALY] File written to /tmp in container
+    (container=%container.name file=%fd.name process=%proc.name user=%user.name)
+  priority: NOTICE
+  tags: [container, anomaly, demo]
+
+# ==========================================
+# Differentiator 3: Live Persistence Detection
+# ==========================================
+
+- rule: Demo - Crontab Modified in Container
+  desc: Detects modifications to crontab for persistence.
+  condition: >
+    evt.type = openat and 
+    evt.is_open_write=true and 
+    container.id != host and 
+    fd.name = /etc/crontab
+  output: >
+    ALERT [PERSISTENCE] Crontab modified in container
+    (container=%container.name file=%fd.name process=%proc.name user=%user.name)
+  priority: CRITICAL
+  tags: [container, persistence, demo]
